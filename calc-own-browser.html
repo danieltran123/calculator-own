@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="https://th.bing.com/th/id/R.de8758eb7d5d9bc3a16b62879685c15b?rik=n6CeYRFQYQ3jYw&amp;riu=http%3a%2f%2ffindicons.com%2ffiles%2ficons%2f1254%2fflurry_system%2f256%2fcalculator.png&amp;ehk=i%2fSCHUI5R7WydJPxGEoF3wVQcDj%2bW3chq85G7kY0YQs%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0&amp;sres=1&amp;sresct=1">
+    <title>Calculator</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'poppins', sans-serif;
+            color: white;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: lightblue;
+        }
+        .calculator {
+            width: 23%;
+            height: 75%;
+            background: #333333;
+            border-radius: 15px;
+            box-shadow: 10px 10px 10px black;
+            padding: 15px;
+        }
+        form {
+            margin-left: 10px;
+            margin-top: 25px;
+        }
+        .row input {
+            width: 75px;
+            height: 75px;
+            border: 1px solid black;
+            border-radius: 15px;
+            box-shadow: 5px 5px 5px black;
+            background: transparent;
+            font-size: 25px;
+            margin: 2.5px;
+        }
+        .display input {
+            width: 325px;
+            height: 100px;
+            font-size: 50px;
+            display: flex;
+            flex: 1;
+            justify-content: flex-end;
+            text-align: right;
+            border: none;
+            outline: none;
+            background: transparent;
+        }
+        input.equal {
+            width: 160px;
+        }
+        .operator {
+            color: #00e6e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form>
+                <div class="display">
+                    <input type="text" name="display">
+                </div>
+                <div class="row">
+                    <input type="button" value="AC" class="operator" onclick="display.value = ''">
+                    <input type="button" value="DE" class="operator" onclick="display.value = display.value.toString().slice(0, -1)">
+                    <input type="button" value="." class="operator" onclick="display.value += '.'">
+                    <input type="button" value="/" class="operator" onclick="display.value += '/'">
+                </div>
+                <div class="row">
+                    <input type="button" value="7" onclick="display.value += '7'">
+                    <input type="button" value="8" onclick="display.value += '8'">
+                    <input type="button" value="9" onclick="display.value += '9'">
+                    <input type="button" value="*" class="operator" onclick="display.value += '*'">
+                </div>
+                <div class="row">
+                    <input type="button" value="4" onclick="display.value += '4'">
+                    <input type="button" value="5" onclick="display.value += '5'">
+                    <input type="button" value="6" onclick="display.value += '6'">
+                    <input type="button" value="-" class="operator" onclick="display.value += '-'">
+                </div>
+                <div class="row">
+                    <input type="button" value="1" onclick="display.value += '1'">
+                    <input type="button" value="2" onclick="display.value += '2'">
+                    <input type="button" value="3" onclick="display.value += '3'">
+                    <input type="button" value="+" class="operator" onclick="display.value += '+'">
+                </div>
+                <div class="row">
+                    <input type="button" value="00" onclick="display.value += '00'">
+                    <input type="button" value="0" onclick="display.value += '0'">
+                    <input type="button" value="=" class="equal operator" onclick="display.value = eval(display.value)">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body></html>
